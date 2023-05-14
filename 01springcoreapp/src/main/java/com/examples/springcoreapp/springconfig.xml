@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+ 
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+  xmlns:context="http://www.springframework.org/schema/context"
+
+  xmlns:p="http://www.springframework.org/schema/p"
+
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+
+   http://www.springframework.org/schema/beans/spring-beans.xsd
+
+   http://www.springframework.org/schema/context
+
+   http://www.springframework.org/schema/context/spring-context.xsd">
+
+ 
+
+ <bean name="emp" class="com.examples.springcoreapp.Employee">
+	<property name="id"> <value>01</value> </property>
+	<property name="name"> <value>Ramesh</value> </property>
+ </bean>
+ <bean name="emp1" class="com.examples.springcoreapp.Employee">
+	<property name="id" value="01"/>
+	<property name="name" value="Suresh"/>
+ </bean>
+ <bean name="emp2" class="com.examples.springcoreapp.Employee" p:id="03" p:name="Radha"/>
+<bean name="emp3" class="com.examples.springcoreapp.Employee">
+	<property name="departments"> 
+	<list>
+	<value>Cse</value><value>Ece</value><value>It</value>
+	</list>
+	</property>
+</bean>
+<bean name="emp4" class="com.examples.springcoreapp.Employee">
+	<property name="products"> 
+	<map>
+	<entry key="01" value="Eggs" />
+	<entry key="02" value="Chicken" />
+	<entry key="03" value="Mutton" />
+	</map>
+	</property>
+</bean>
+<bean name="emp5" class="com.examples.springcoreapp.Employee">
+	<property name="countriesLanguages"> 
+	<props>
+	<prop key="01">English </prop>
+	<prop key="02">Telugu</prop>
+	<prop key="03">Spanish </prop>
+	</props>
+	</property>
+</bean>
+<bean name="emp6" class="com.examples.springcoreapp.Address" p:city="Hyderabad" p:state="Telangan" p:pincode="500010" />
+<bean name="emp7" class="com.examples.springcoreapp.Employee">
+<property name="address">
+	<ref bean="emp6"/>
+	</property>
+</bean>
+
+</beans>
